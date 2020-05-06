@@ -1,0 +1,73 @@
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+// *というセレクタで全ての要素に適用
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  &__innner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__left {
+    display: flex;
+    align-items: center;
+    &__icon {
+      &__img {
+        width: 100px;
+        padding: 20px;
+      }
+    }
+  }
+  &__right {
+    &__list {
+      display: flex;
+      &__post {
+        padding-right: 50px;
+      }
+      &__new {
+        padding-right: 50px;
+      }
+      &__login {
+        padding-right: 40px;
+      }
+    }
+  }
+}
+.main {
+  .top-visual {
+    background-image: url(/assets/sake.jpg);
+    height: 500px;
+    background-size: cover;
+    display: flex;
+    .content {
+      text-align: center;
+      margin: auto;
+      &__title {
+        color: white;
+        font-size: 30px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        padding: 0 0 10px 0;
+      }
+      &__search {
+        form {
+          display: flex;
+        }
+        &__input {
+          width: 100%;
+          padding: 0 0 0 5px;
+          height: 37px;
+        }
+        &__btn {
+          background-color: sandybrown;
+          width: 37px;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}

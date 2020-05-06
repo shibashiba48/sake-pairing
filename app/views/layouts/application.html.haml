@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title SakePairing
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+  .header
+    .header__innner
+      .header__left
+        .header__left__icon
+          = link_to root_path do
+            = image_tag "/logo.png", class: "header__left__icon__img", alt: ""
+        .header__left__text
+          SAKEPAIRING
+      .header__right
+        %ul.header__right__list
+          %li.header__right__list__post
+            投稿する
+          %li.header__right__list__new
+            新規登録
+          %li.header__right__list__login
+            ログイン
+  = yield
