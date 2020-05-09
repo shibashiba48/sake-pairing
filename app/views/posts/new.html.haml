@@ -1,0 +1,13 @@
+.post__contents
+  .post__container
+    = form_with model: @post, local: true, class: "post__new" do |f|
+      .post__image
+        .post__image__upload
+      .post__type
+        = f.text_field :type, placeholder: "銘柄"
+      .post__tag
+        = f.text_field :tag, placeholder: "タグを追加"
+      .post__comment
+        = f.text_area :text, placeholder: "コメント"
+      .post__btn
+        = f.submit "投稿する"
