@@ -21,7 +21,6 @@
           - if user_signed_in?
             = link_to user_session_path, class: "header__right__list__login" do
               マイページ
-            // あとで修正
             = link_to new_post_path, class: "header__right__list__post" do
               投稿する
           - else 
