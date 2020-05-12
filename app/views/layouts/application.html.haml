@@ -15,7 +15,8 @@
           = link_to root_path do
             = image_tag "/logo.png", class: "header__left__icon__img", alt: ""
         .header__left__text
-          SAKEPAIRING
+          = link_to root_path, class: "header__left__text__text" do
+            SAKE PAIRING
       .header__right
         %ul.header__right__list
           - if user_signed_in?
@@ -23,7 +24,7 @@
               マイページ
             = link_to new_post_path, class: "header__right__list__post" do
               投稿する
-          - else 
+          - else
             = link_to new_user_session_path, class: "header__right__list__login" do
               ログイン
             = link_to new_user_registration_path, class: "header__right__list__new" do

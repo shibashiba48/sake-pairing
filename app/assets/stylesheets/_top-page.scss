@@ -16,6 +16,13 @@ body {
   &__left {
     display: flex;
     align-items: center;
+    &__text {
+      font-size: 20px;
+      &__text {
+        color: black;
+        text-decoration: none;
+      }
+    }
     &__icon {
       &__img {
         width: 100px;
@@ -28,12 +35,18 @@ body {
       display: flex;
       &__post {
         padding-right: 50px;
+        text-decoration: none;
+        color: black;
       }
       &__new {
         padding-right: 50px;
+        text-decoration: none;
+        color: black;
       }
       &__login {
         padding-right: 40px;
+        text-decoration: none;
+        color: black;
       }
     }
   }
@@ -41,7 +54,7 @@ body {
 .main {
   .top-visual {
     background-image: url(/assets/sake.jpg);
-    height: 500px;
+    height: 600px;
     background-size: cover;
     display: flex;
     .content {
