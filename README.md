@@ -1,4 +1,5 @@
-# sake-pairing DB設計
+# SAKE PAIRING
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
