@@ -1,0 +1,31 @@
+.post__contents {
+  background-color: antiquewhite;
+  .post__container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    form {
+      padding: 40px;
+      .post__type {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #cccccc;
+        &__text {
+          border: none;
+        }
+      }
+      .post__tag {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #cccccc;
+        &__text {
+          border: none;
+        }
+      }
+      .post__comment {
+        border-bottom: 1px solid #cccccc;
+        &__text {
+          border: none;
+        }
+      }
+    }
+  }
+}

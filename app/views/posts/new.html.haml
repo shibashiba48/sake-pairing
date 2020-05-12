@@ -4,10 +4,10 @@
       .post__image
         .post__image__upload
       .post__type
-        = f.text_field :type, placeholder: "銘柄"
+        = f.text_field :type, placeholder: "銘柄", class: "post__type__text"
       .post__tag
-        = f.text_field :tag, placeholder: "タグを追加"
+        = f.text_field :tag, placeholder: "タグを追加", class: "post__tag__text"
       .post__comment
-        = f.text_area :text, placeholder: "コメント"
+        = f.text_area :text, placeholder: "コメント",  class: "post__comment__text"
       .post__btn
         = f.submit "投稿する"
