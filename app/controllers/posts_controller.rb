@@ -5,17 +5,22 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.images.new
   end
 
   def create
-    Post.create(post_params)
-    redirect_to root_path
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:name, :type, :text)
+    params.require(:post).permit(:name, :type, :text, images_attributes: [:src])
   end
 
 
