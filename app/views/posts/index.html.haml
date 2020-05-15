@@ -7,4 +7,4 @@
         = form_with local: true do |f|
           = f.text_field :keyword, class: "content__search__input", placeholder: "今夜の晩ごはんは？"
           = link_to image_tag "/icon-search 1.png", class: "content__search__btn"
-          
+        = render @posts

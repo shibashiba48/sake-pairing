@@ -1,0 +1,6 @@
+.list
+  %p = post.name
+  %p = post.tag
+  %p = post.text
+  - post.images.each do |i|
+    = image_tag image.src.url
