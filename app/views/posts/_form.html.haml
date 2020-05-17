@@ -1,7 +1,7 @@
 .post__contents
   .post__container
     = form_with model: @post, local: true, class: "post__new" do |f|
-      = f.text_field :tyfpe, placeholder: "銘柄", class: "post__type"
+      = f.text_field :name, placeholder: "銘柄", class: "post__type"
       = f.text_field :tag, placeholder: "タグを追加", class: "post__tag"
       = f.text_area :text, placeholder: "コメント",  class: "post__comment"
       = f.fields_for :images do |i|
