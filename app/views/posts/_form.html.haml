@@ -5,6 +5,7 @@
       = f.fields_for :tags, @post.tags.build do |t|
         = t.text_field :text, placeholder: "タグを追加", class: "post__tag"
       = f.text_area :text, placeholder: "コメント",  class: "post__comment"
-      = f.fields_for :images do |i|
-        = i.file_field :src        
-      = f.submit "投稿する", class: "post__btn"
+      #post__image
+        = f.fields_for :images do |i|
+          = i.file_field :src        
+        = f.submit "投稿する", class: "post__btn"

@@ -1,6 +1,10 @@
+//商品一覧表示
 .list
-  %p= post.name
-  %p= post.tags
-  %p= post.text
+  .list__name
+    = post.name
+  .list__tags
+    = post.tags
+  .list__text
+    = post.text
   - post.images.each do |image|
     = image_tag image.src.url
