@@ -8,3 +8,5 @@
     = post.text
   - post.images.each do |image|
     = image_tag image.src.url
+
+= link_to "編集", edit_post_path(post)
