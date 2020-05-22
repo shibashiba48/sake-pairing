@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :set_post, except: [:index, :new, :create]
+
   def index
     @posts = Post.all.includes(:images).order("created_at DESC")
   end
@@ -18,12 +21,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     if @post.update(post_params)
       redirect_to root_path
     else
       render :edit
     end
+  end
+
+  def destroy
   end
 
   private
