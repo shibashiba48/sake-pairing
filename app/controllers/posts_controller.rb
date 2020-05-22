@@ -24,6 +24,7 @@ class PostsController < ApplicationController
     else
       render :edit
     end
+  end
 
   private
 
@@ -34,5 +35,4 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
-
 end
