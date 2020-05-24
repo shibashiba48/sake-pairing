@@ -1,23 +1,31 @@
 .post__contents
   .post__container
     = form_with model: @post, local: true, class: "post__new" do |f|
-      = f.text_field :name, placeholder: "銘柄", class: "post__type"
-      = f.fields_for :tags, @post.tags.build do |t|
-        = t.text_field :text, placeholder: "タグを追加", class: "post__tag"
-      = f.text_area :text, placeholder: "コメント",  class: "post__comment"
-      #image-box
-        #previews
+      .post__left
+        #image-box
+          #previews
+            - if @post.persisted?
+              - @post.images.each_with_index do |image, i|
+                = image_tag image.src.url, data: { index: i }
+            .preview-box
+              %label{for: "post_images_attributes_#{@post.images.count}_src", class: "label-box", id: "label-box__#{@post.images.count}"}
+                .label-box__text ファイルをアップロード
+                
+          = f.fields_for :images do |image|
+            .js-file_group{"data-index": "#{image.index}"}
+              = image.file_field :src, class: "js-file"
+              %span.js-remove 削除
+            - if @post.persisted?
+              = image.check_box :_destroy, data:{ index: image.index }, class: "hidden-destroy"
           - if @post.persisted?
-            - @post.images.each_with_index do |image, i|
-              = image_tag image.src.url, data: { index: i }, width: "100", height: "100"
-        = f.fields_for :images do |image|
-          .js-file_group{"data-index": "#{image.index}"}
-            = image.file_field :src, class: "js-file"
-            %span.js-remove 削除
-          - if @post.persisted?
-            = image.check_box :_destroy, data:{ index: image.index }, class: "hidden-destroy"
-        - if @post.persisted?
-          .js-file_group{"data-index": "#{@post.images.count}"}
-            = file_field_tag :src, name: "post[images_attributes][#{@post.images.count}][src]", class: "js-file"
-            .js-remove 削除
-      = f.submit "投稿する", class: "post__btn"
+            .js-file_group{"data-index": "#{@post.images.count}"}
+              = file_field_tag :src, name: "post[images_attributes][#{@post.images.count}][src]", class: "js-file"
+              .js-remove 削除
+      .post__right
+        = f.text_field :name, placeholder: "銘柄", class: "post__right__type"
+        = f.fields_for :tags, @post.tags.build do |t|
+          = t.text_field :text, placeholder: "タグを追加", class: "post__right__tag"
+        = f.text_area :text, placeholder: "コメント",  class: "post__right__comment"
+    = form_with model: @post, local: true, class: "post__footer" do |f|
+      .post__button
+        = f.submit "投稿する", class: "post__btn"

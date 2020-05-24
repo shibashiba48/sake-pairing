@@ -5,48 +5,65 @@
     margin: 0 auto;
     padding: 40px;
     background-color: white;
-    .post__type {
-      margin-bottom: 30px;
-      border-bottom: 1px solid #cccccc;
-      border-top: none;
-      border-right: none;
-      border-left: none;
-      width: 100%;
-      &:focus {
-        outline: none;
+    .post__new {
+      display: flex;
+      .post__right {
+        &__type {
+          margin-bottom: 30px;
+          border-bottom: 1px solid #cccccc;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          width: 100%;
+          &:focus {
+            outline: none;
+          }
+        }
+        &__tag {
+          margin-bottom: 30px;
+          border-bottom: 1px solid #cccccc;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          width: 100%;
+          &:focus {
+            outline: none;
+          }
+        }
+        &__comment {
+          border-bottom: 1px solid #cccccc;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          width: 100%;
+          &:focus {
+            outline: none;
+          }
+        }    
+      }
+      .post__left {
+        .label-box {
+          display: block;
+          width: 100%;
+          height: 200px;
+          background-color: yellow;
+          &__text {
+            text-align: center;
+          }
+        }
       }
     }
-    .post__tag {
-      margin-bottom: 30px;
-      border-bottom: 1px solid #cccccc;
-      border-top: none;
-      border-right: none;
-      border-left: none;
-      width: 100%;
-      &:focus {
-        outline: none;
-      }
-    }
-    .post__comment {
-      border-bottom: 1px solid #cccccc;
-      border-top: none;
-      border-right: none;
-      border-left: none;
-      width: 100%;
-      &:focus {
-        outline: none;
-      }
-    }
-    
-    .post__btn {
+    .post__footer {
       text-align: center;
-      width: 370px;
-      height: 50px;
-      line-height: 50px;
-      text-align: center;
-      margin: 0 auto;
-      color: white;
-      background-color: #ff9900;
+      .post__btn {
+        width: 370px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        margin: 0 auto;
+        color: white;
+        background-color: #ff9900;
+      }  
     }
   }
 }
