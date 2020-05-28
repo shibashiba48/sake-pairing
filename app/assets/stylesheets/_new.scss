@@ -42,13 +42,23 @@
         }    
       }
       .post__left {
-        .label-box {
-          display: block;
-          width: 100%;
-          height: 200px;
-          background-color: yellow;
-          &__text {
-            text-align: center;
+        #previews {
+          .preview-box {
+            .label-box {
+              display: block;
+              width: 100%;
+              height: 200px;
+              background-color: yellow;
+              &__text {
+                text-align: center;
+              }
+            }    
+          }
+        }
+        .js-file_group {
+          .js-file {
+          }
+          .js-remove {
           }
         }
       }

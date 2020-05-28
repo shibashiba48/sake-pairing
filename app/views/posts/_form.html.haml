@@ -6,11 +6,12 @@
           #previews
             - if @post.persisted?
               - @post.images.each_with_index do |image, i|
+                .preview-box{data: {index: i}}
                 = image_tag image.src.url, data: { index: i }
-            .preview-box
+            
               %label{for: "post_images_attributes_#{@post.images.count}_src", class: "label-box", id: "label-box__#{@post.images.count}"}
                 .label-box__text ファイルをアップロード
-                
+                 
           = f.fields_for :images do |image|
             .js-file_group{"data-index": "#{image.index}"}
               = image.file_field :src, class: "js-file"
