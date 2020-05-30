@@ -2,7 +2,9 @@ $(document).on('turbolinks:load', ()=> {
   // プレビュー用のhtmlを生成する関数
   const buildHTML = (count, image)=> {
     const html = `<div class="preview-box" data-index="${count}">
-                    <img class="">`
+                    <img class="img-box" data-index="${count}" src="${image}">
+                  </div>`
+    return html;
   }
 
   // 画像用のinputを生成する関数
