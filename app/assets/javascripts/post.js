@@ -1,11 +1,4 @@
 $(document).on('turbolinks:load', ()=> {
-  // プレビュー用のhtmlを生成する関数
-  const buildHTML = (count, image)=> {
-    const html = `<div class="preview-box" data-index="${count}">
-                    <img class="img-box" data-index="${count}" src="${image}">
-                  </div>`
-    return html;
-  }
 
   // 画像用のinputを生成する関数
   const buildFileField = (index)=> {
@@ -30,10 +23,10 @@ $(document).on('turbolinks:load', ()=> {
   fileIndex.splice(0, lastIndex);
   $(".hidden-destroy").hide();
 
-  $('#image-box').on('change', '.js-file', function(e) {
+  $('#image-box').on('change', '.js-file', function() {
     const targetIndex = $(this).parent().data("index");
     // ファイルのブラウザ上でのURLを取得する
-    const file = e.target.files[0];
+    const file = this.files[0];
     const blobUrl = window.URL.createObjectURL(file);
     // 該当indexを持つimgタグがあれば取得して変数imgに入れる（画像変更の処理）
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
@@ -45,6 +38,10 @@ $(document).on('turbolinks:load', ()=> {
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    }
+    // プレビューがあったらラベルを隠す
+    if ($(".js-file_group").length >= 1) {
+      $(".label").hide();
     }
   });
 
