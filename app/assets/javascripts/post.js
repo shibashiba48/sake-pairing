@@ -6,13 +6,17 @@ $(document).on('turbolinks:load', ()=> {
                     <input class="js-file" type="file"
                     name="post[images_attributes][${index}][src]"
                     id="post_images_attributes_${index}_src"><br>
-                    <div class="js-remove">削除</div>
                   </div>`;
     return html;
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src= "${url}" width="200px" height="200px">`;
+    const html = `<img data-index="${index}" src= "${url}" width="200px" height="200px">
+                    <div class="lower-box">
+                      <label class="update-box" for="post_images_attributes_${index}_src">変更</label>
+                      <div class="js-remove">削除</div>
+                    </div>
+                  </div>`
     return html;
   }
 
@@ -45,6 +49,7 @@ $(document).on('turbolinks:load', ()=> {
     }
   });
 
+  // 画像の削除
   $('#image-box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index')
     // 該当indexを振られているチェックボックスを取得する
@@ -55,6 +60,8 @@ $(document).on('turbolinks:load', ()=> {
     $(`img[data-index="${targetIndex}"]`).remove();
 
     // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+    if ($('#previews').length < 1) {
+      $(".label").show();
+    }
   });
 });
