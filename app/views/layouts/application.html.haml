@@ -24,6 +24,8 @@
               マイページ
             = link_to new_post_path, class: "header__right__list__post" do
               投稿する
+            = link_to destroy_user_session_path, method: :delete, class: "header__right__list__logout" do
+              ログアウト
           - else
             = link_to new_user_session_path, class: "header__right__list__login" do
               ログイン
@@ -31,5 +33,4 @@
               新規登録
             = link_to new_post_path, class: "header__right__list__post" do
               投稿する
-
   = yield
