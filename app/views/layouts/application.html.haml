@@ -15,13 +15,22 @@
           = link_to root_path do
             = image_tag "/logo.png", class: "header__left__icon__img", alt: ""
         .header__left__text
-          SAKEPAIRING
+          = link_to root_path, class: "header__left__text__text" do
+            SAKE PAIRING
       .header__right
         %ul.header__right__list
-          %li.header__right__list__post
-            投稿する
-          %li.header__right__list__new
-            新規登録
-          %li.header__right__list__login
-            ログイン
+          - if user_signed_in?
+            = link_to user_session_path, class: "header__right__list__login" do
+              マイページ
+            = link_to new_post_path, class: "header__right__list__post" do
+              投稿する
+            = link_to destroy_user_session_path, method: :delete, class: "header__right__list__logout" do
+              ログアウト
+          - else
+            = link_to new_user_session_path, class: "header__right__list__login" do
+              ログイン
+            = link_to new_user_registration_path, class: "header__right__list__new" do
+              新規登録
+            = link_to new_post_path, class: "header__right__list__post" do
+              投稿する
   = yield

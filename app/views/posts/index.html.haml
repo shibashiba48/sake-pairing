@@ -1,3 +1,10 @@
-.wrapper
-  = render "main"
-  = render "new"
+.main
+  .top-visual
+    .content
+      .content__title
+        あなたの飲みたい日本酒が見つかる
+      .content__search
+        = form_with local: true do |f|
+          = f.text_field :keyword, class: "content__search__input", placeholder: "今夜の晩ごはんは？"
+          = link_to image_tag "/icon-search 1.png", class: "content__search__btn"
+= render @posts

@@ -1,0 +1,30 @@
+-# ログイン画面
+- content_for(:html_title) {"新規会員登録(1/2) - FreemarketSample65a"}
+.User-Account-page
+  .User-Account-page__content
+    .User-contents
+      %h2.User-contents__head
+        会員情報入力
+      = form_for(@user, url: user_registration_path) do |f|
+        .User-field
+          .User-field__label
+            = f.label :nickname, "ニックネーム"
+          .User-field__input
+            = f.text_field :nickname, placeholder: '例)日本酒ハナコ', autofocus: true, class: 'User-field__input--inner'
+        .User-field
+          .User-field__label
+            = f.label :email, "メールアドレス"
+          .User-field__input
+            = f.email_field :email, placeholder: 'PC・携帯どちらでも可', class: 'User-field__input--inner'
+        .User-field
+          .User-field__label
+            = f.label :password, "パスワード"
+          .User-field__input
+            = f.password_field :password, placeholder: '英数字7文字以上', autocomplete: "off", class: 'User-field__input--inner'
+        .User-field
+          .User-field__label
+            = f.label :password_confirmation, "パスワード（確認）"
+          .User-field__input
+            = f.password_field :password_confirmation, autocomplete: "off", class: 'User-field__input--inner'
+        .User-actions
+          = f.submit "登録する", class: 'User-actions__btn'

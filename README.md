@@ -36,7 +36,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|type|string|null: false|
 |text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association

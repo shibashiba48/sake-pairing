@@ -1,0 +1,248 @@
+@mixin User-links {
+  height: 100px;
+  text-align: center;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  &__root {
+    width: 200px;
+    font-size: 30px;
+    display: block;
+    text-decoration: none;
+    margin: 0 auto;
+  }
+}
+
+@mixin User-button-base {
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 50px;
+  height: 50px;
+  width: 370px;
+  margin-top: 15px;
+  border: 1px solid transparent;
+  position: relative;
+  i {
+    font-size: 26px;
+    position: absolute;
+    top: 10px;
+    left: 16px;
+  }
+}
+
+@mixin User-field__require {
+  background-color: #ea352d;
+  color: #f8f8f8;
+  margin: 0 0 0 4px;
+  padding: 2px 4px;
+  font-size: 15px;
+}
+
+.User-Account-page {
+  background-color: #eee;
+  &__header {
+    @include User-links;
+    &__user-manage, &__login-out {
+      @include User-links;
+      float: right;
+    }
+  }
+  &__content {
+    display: block;
+    background-color: antiquewhite;
+    .User-contents {
+      // height: 100vh;
+      width: 700px;
+      background-color: white;
+      margin: 0 auto;
+      &__head {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        padding: 40px 65px;
+        border-bottom: solid 1px #eeeeee;
+        &__comment {
+          margin-bottom: 10px;
+        }
+        &__create {
+          display: block;
+          margin: 0 auto;
+          width: 370px;
+          border: solid 1px #0099e8;
+          background-color: #0099e8;
+          line-height: 40px;
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+      &__inner {
+        padding: 40px 65px;
+        display: grid;
+        &--facebook {
+          @include User-button-base;
+          background-color: #385185;
+          color: #fff;
+        }
+        &--google {
+          @include User-button-base;
+          background-color: #fff;
+          color: #222222;
+          border: solid 1px #222222;
+        }
+      }
+      &__create-address {
+        width: 700px;
+        height: 300px;
+        background-color: #FFFFFF;
+        align-items: center;
+        justify-content: center;
+        .contents_create-address__main {
+          width: 400px;
+          margin: 0 auto;
+          padding: 50px 0;
+          text-align: center;
+        }
+        .create-address__toppage--link {
+          text-decoration: none;
+        }
+        .create-address__toppage--btn {
+          width: 370px;
+          height: 50px;
+          line-height: 50px;
+          text-align: center;
+          margin: 0 auto;
+          color: #EEEEEE;
+          background-color: #3CCACE;
+        }
+      }
+    }
+  }
+}
+
+#new_user {
+  padding: 25px 165px 35px;
+  .User-field {
+    margin-bottom: 10px;
+    &__label {
+      padding: 10px 0;
+      letter-spacing: 1px;
+      font-size: 14px;
+      font-weight: bold;
+      display: contents;
+    }
+    &__require {
+      @include User-field__require;
+    }
+    &__input {
+      display: flex;
+      justify-content: space-between;
+      &--inner {
+        width: 100%;
+        margin: 25px 0;
+        padding: 10px;
+        letter-spacing: 1px;
+        margin-top: 8px;
+        border-bottom: 1px solid #cccc;
+        border-top: none;
+        border-left: none;
+        border-right: none;    
+        &:focus {
+          outline: none;
+        }
+      }
+      &--sminner {
+        width: 50%;
+        margin: 25px 2px;
+        padding: 10px;
+        letter-spacing: 1px;
+        margin-top: 8px;
+      }
+    }
+  }
+  .User-actions {
+    margin: 24px 0;
+    display: grid;
+    &__btn {
+      display: inline-block;
+      background-color: #ff9900;
+      color: #fff;
+      height: 50px;
+      padding: 0 30px;
+      line-height: 50px;
+      letter-spacing: 1px;
+      text-align: center;
+      border-radius: 80px;
+      font-weight: bold;
+      font-size: 17px;
+      border: solid 1px;
+    }
+  }
+}
+  #new_address {
+    padding: 25px 165px 35px;
+    .User-field {
+      margin-bottom: 10px;
+      &__label {
+        padding: 10px 0;
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: bold;
+        display: contents;
+      }
+      &__require {
+        @include User-field__require;
+      }
+      &__free {
+        background-color: #bfbfbf;
+        color: #f8f8f8;
+        margin: 0 0 0 4px;
+        padding: 2px 4px;
+        font-size: 15px;
+      }
+      &__input {
+        display: flex;
+        justify-content: space-between;
+        &--inner {
+          width: 100%;
+          margin: 25px 0;
+          padding: 10px;
+          letter-spacing: 1px;
+          margin-top: 8px;
+        }
+        &--sminner {
+          width: 50%;
+          margin: 25px 2px;
+          padding: 10px;
+          letter-spacing: 1px;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+  .User-pw__missing {
+    display: block;
+    margin: 40px 0 0;
+    a {
+      text-decoration: none;
+      color: #0099e8;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+
+.User-identification__title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.User-identification__text {
+  font-size: 14px;
+  padding-bottom: 15px;
+}
+
+.field_with_errors {
+  display: contents;
+  // もしくは diplay: inline;
+}
