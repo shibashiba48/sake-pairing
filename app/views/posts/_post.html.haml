@@ -3,11 +3,11 @@
   .post-list
     = link_to post_path(post.id), class: "post-list__content" do
       .post-list__card
+        - post.images.each do |image|
+          = image_tag image.src.url, class: "post-list__card__img"
         .post-list__card__name
           = post.name
         .post-list__card__tags
           = post.tags
         .post-list__card__text
           = post.text
-        - post.images.each do |image|
-          = image_tag image.src.url
