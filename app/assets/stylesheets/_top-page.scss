@@ -109,6 +109,18 @@ body {
       overflow-x: auto;
       .post-list {
         margin: 0 20px;
+        margin: 0 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 1px 3px rgba(61,10,0,.1);
+        width: 250px;
+        &__content {
+          text-decoration: none;
+          .post-list__card {
+            .post-list__lower-box {
+              padding: 13px;
+            }
+          }  
+        }
       }
     }
   }
