@@ -1,0 +1,36 @@
+.details
+  .detail-box
+    .detail-box-heading
+      = @post.name
+    .detail-box-photo
+      .detail-box-photo__wrap
+        .detail-box-photo__sold
+        = image_tag @post.images.first.src.url, alt: 'main_photo', class: :"detail-box-photo__main"
+    .detail-box-action
+      = link_to edit_post_path(@post), class: :"detail-box-action__link" do
+        .detail-box-action__button 投稿の編集
+      = link_to post_path(@post), method: :delete, class: :"detail-box-action__link", data: {confirm: "削除しますか？"} do
+        .detail-box-action__button.detail-box-action__button--gray この投稿を削除する
+    .detail-box-description
+      .detail-box-description__text
+        = @post.text
+      .detail-box-description__tag
+      %table.detail-box-table
+        %tr
+          %th.detail-box-table__th 出品者
+          %td.detail-box-table__td
+            = @post.user.nickname
+        %tr
+          %th.detail-box-table__th カテゴリー
+        お気に入り 0
+      -# = link_to '#', class: :"detail-box-button-container__report" do
+      -#   = icon 'fa', 'flag'
+      -#   不適切な商品の通報
+  = form_with model: [@post], local: true, class: :"detail-comment" do |f|
+    = f.text_area :body, class: :"detail-comment__textbox"
+    .detail-comment__button
+      = button_tag type: 'submit', class: 'detail-comment__submit' do
+        = icon 'fa', 'comment'
+        コメントする
+  .detail-category-posts
+    .detail-category-posts__head
