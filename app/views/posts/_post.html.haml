@@ -1,13 +1,13 @@
 //商品一覧表示
-.list
-  .list__name
-    = post.name
-  .list__tags
-    = post.tags
-  .list__text
-    = post.text
-  - post.images.each do |image|
-    = image_tag image.src.url
-
-= link_to "編集", edit_post_path(post)
-= link_to "削除", post_path(post), method: :delete
+- @posts.each do |post|
+  .post-list
+    = link_to post_path(post.id), class: "post-list__content" do
+      .post-list__card
+        - post.images.each do |image|
+          = image_tag image.src.url, class: "post-list__card__img"
+        .post-list__lower-box
+          .post-list__lower-box__name
+            = post.name
+          .post-list__lower-box__tag
+            - post.tags.each do |tag|
+              = tag.text
