@@ -8,5 +8,6 @@
         .post-list__lower-box
           .post-list__lower-box__name
             = post.name
-          .post-list__lower-box__tags
-            = post.tags
+          .post-list__lower-box__tag
+            - post.tags.each do |tag|
+              = tag.text
