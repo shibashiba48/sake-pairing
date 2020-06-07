@@ -98,7 +98,7 @@ body {
     .post-head {
       font-size: 24px;
       text-decoration: none;
-      color: orange;
+      color: saddlebrown;
       font-weight: bold;
     }
     .post-lists {
@@ -110,14 +110,32 @@ body {
       .post-list {
         margin: 0 20px;
         margin: 0 20px;
-        border: 1px solid #ccc;
+        border: 1px solid #e6e2df;
         box-shadow: 0 1px 3px rgba(61,10,0,.1);
         width: 250px;
+        border-radius: 10px;
         &__content {
           text-decoration: none;
           .post-list__card {
+            &__img {
+              height: 200px;
+              width: 200px;
+              object-fit: cover;
+              border-top-left-radius: 10px;
+              border-top-right-radius: 10px;
+            }
             .post-list__lower-box {
               padding: 13px;
+              font-size: 15px;
+              &__name {
+                color: darkslategray;
+                margin-bottom: 10px;
+              }
+              &__tag {
+                border: solid 1px;
+                border-radius: 20px;
+                color: coral;
+              }
             }
           }  
         }
