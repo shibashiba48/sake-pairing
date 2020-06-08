@@ -6,26 +6,23 @@
       .detail-box__photo__wrap
         .detail-box__photo__sold
         = image_tag @post.images.first.src.url, alt: 'main_photo', class: :"detail-box__photo__main"
-    .detail-box__action
-      = link_to edit_post_path(@post), class: :"detail-box__action__link" do
-        .detail-box__action__button 投稿の編集
-      = link_to post_path(@post), method: :delete, class: :"detail-box__action__link", data: {confirm: "削除しますか？"} do
-        .detail-box__action__button.detail-box__action__button--gray この投稿を削除する
     .detail-box__description
       .detail-box__description__tag
         - @post.tags.each do |tag|
           = tag.text
       .detail-box__description__text
         = @post.text
-      .detail-box__description__tag
-      %table.detail-box__table
-        %tr
-          %th.detail-box__table__th 出品者
-          %td.detail-box__table__td
-            = @post.user.nickname
-        %tr
-          %th.detail-box__table__th カテゴリー
-        お気に入り 0
+    .detail-box__action
+      = link_to edit_post_path(@post), class: :"detail-box__action__link" do
+        .detail-box__action__button 投稿の編集
+      = link_to post_path(@post), method: :delete, class: :"detail-box__action__link", data: {confirm: "削除しますか？"} do
+        .detail-box__action__button.detail-box__action__button--gray この投稿を削除する
+      .detail-box__table
+        .detail-box__table__th 投稿者
+        .detail-box__table__td
+          = @post.user.nickname
+        .detail-box__table__th カテゴリー
+      // お気に入り 0
       -# = link_to '#', class: :"detail-box__button-container__report" do
       -#   = icon 'fa', 'flag'
       -#   不適切な商品の通報
