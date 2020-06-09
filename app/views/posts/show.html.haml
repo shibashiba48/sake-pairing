@@ -1,0 +1,38 @@
+.details
+  .detail-box
+    .detail-box__heading
+      = @post.name
+    .detail-box__photo
+      .detail-box__photo__wrap
+        .detail-box__photo__sold
+        = image_tag @post.images.first.src.url, alt: 'main_photo', class: :"detail-box__photo__main"
+    .detail-box__user
+      .detail-box__user__icon
+        = link_to root_path, class: "detail-box__user__icon__face" do
+          = icon("far fa-grin-wink", class: "detail-box__user__icon__img")
+      .detail-box__user__name
+        = @post.user.nickname
+    .detail-box__description
+      .detail-box__description__tag
+        ＃
+        - @post.tags.each do |tag|
+          = tag.text
+      .detail-box__description__text
+        = @post.text
+    .detail-box__action
+      = link_to edit_post_path(@post), class: :"detail-box__action__link" do
+        .detail-box__action__button 投稿の編集
+      = link_to post_path(@post), method: :delete, class: :"detail-box__action__link", data: {confirm: "削除しますか？"} do
+        .detail-box__action__button.detail-box__action__button--gray この投稿を削除する
+      // お気に入り 0
+      -# = link_to '#', class: :"detail-box__button-container__report" do
+      -#   = icon 'fa', 'flag'
+      -#   不適切な商品の通報
+  = form_with model: [@post], local: true, class: :"detail-comment" do |f|
+    = f.text_area :body, class: :"detail-comment__textbox"
+    .detail-comment__button
+      = button_tag type: 'submit', class: 'detail-comment__submit' do
+        = icon 'fa', 'comment'
+        コメントする
+  .detail-category__posts
+    .detail-category__posts__head

@@ -32,8 +32,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    redirect_to root_path
+    if @post.destroy
+      redirect_to root_path
+    else
+      flash.now[:alert] = "商品を削除できませんでした"
+      render :show
+    end
+  end
+
+  def show
   end
 
   private
