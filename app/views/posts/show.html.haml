@@ -6,8 +6,15 @@
       .detail-box__photo__wrap
         .detail-box__photo__sold
         = image_tag @post.images.first.src.url, alt: 'main_photo', class: :"detail-box__photo__main"
+    .detail-box__user
+      .detail-box__user__icon
+        = link_to root_path, class: "detail-box__user__icon__face" do
+          = icon("far fa-grin-wink", class: "detail-box__user__icon__img")
+      .detail-box__user__name
+        = @post.user.nickname
     .detail-box__description
       .detail-box__description__tag
+        ＃
         - @post.tags.each do |tag|
           = tag.text
       .detail-box__description__text
@@ -17,11 +24,6 @@
         .detail-box__action__button 投稿の編集
       = link_to post_path(@post), method: :delete, class: :"detail-box__action__link", data: {confirm: "削除しますか？"} do
         .detail-box__action__button.detail-box__action__button--gray この投稿を削除する
-      .detail-box__table
-        .detail-box__table__th 投稿者
-        .detail-box__table__td
-          = @post.user.nickname
-        .detail-box__table__th カテゴリー
       // お気に入り 0
       -# = link_to '#', class: :"detail-box__button-container__report" do
       -#   = icon 'fa', 'flag'
