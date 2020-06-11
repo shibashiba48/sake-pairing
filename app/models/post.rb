@@ -5,4 +5,11 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
+
+  validates :name, :text, presence: true
+
+  def self.search(search)
+    return Post.all unless search
+    Post.joins(:tags).where('tags.text LIKE(?)', "%#{search}%")
+  end
 end
