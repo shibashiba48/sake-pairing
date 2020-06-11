@@ -1,8 +1,6 @@
-.main
-  .pickup-categories
-    .head
-      - if @keyword.present?
-        = "#{@keyword}の検索結果"
-    .products
-      .product-lists
-        = render "posts/post"
+.new-posts
+  .head
+    - if @keyword.present?
+      = "#{@keyword}の検索結果"
+    .post-lists
+      = render "posts/post"
