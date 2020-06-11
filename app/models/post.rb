@@ -10,7 +10,6 @@ class Post < ApplicationRecord
 
   def self.search(search)
     return Post.all unless search
-    Post.where('text LIKE(?)', "%#{search}%")
     Post.joins(:tags).where('tags.text LIKE(?)', "%#{search}%")
   end
 end
