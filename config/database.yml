@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: sake-pairing_production
-  username: sake-pairing
-  password: <%= ENV['SAKE-PAIRING_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
