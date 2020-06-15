@@ -113,6 +113,7 @@ body {
         border: 1px solid #e6e2df;
         box-shadow: 0 1px 3px rgba(61,10,0,.1);
         border-radius: 10px;
+        max-width: 200px;
         &__content {
           text-decoration: none;
           .post-list__card {
