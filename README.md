@@ -17,7 +17,7 @@
 ![検索結果](https://user-images.githubusercontent.com/58945747/85203633-0a4d2080-b34a-11ea-9e82-79227de6dfa5.png)
 
 
-## 実装予定の内容
+## 実装内容
 - ユーザー管理機能
 - 商品一覧表示
 - 商品詳細表示
