@@ -28,8 +28,17 @@
       -# = link_to '#', class: :"detail-box__button-container__report" do
       -#   = icon 'fa', 'flag'
       -#   不適切な商品の通報
-  = form_with model: [@post], local: true, class: :"detail-comment" do |f|
-    = f.text_area :body, class: :"detail-comment__textbox"
+  = form_with model: [@post, @comment], local: true, class: :"detail-comment" do |f|
+    - if @comments
+      - @comments.each do |comment|
+        .detail-comment__wrap
+          .detail-comment__left
+            = image_tag 'neko_akai.png', alt: 'item_photo', class: :'detail-comment__icon'
+          .detail-comment__right
+            .detail-comment__nickname= comment.user.nickname
+            .detail-comment__body
+              = comment.body
+    = f.text_area :body, class: :"detail-comment__textbox", placeholder: '気軽にコメントしましょう！'
     .detail-comment__button
       = button_tag type: 'submit', class: 'detail-comment__submit' do
         = icon 'fa', 'comment'
