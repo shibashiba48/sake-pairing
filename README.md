@@ -12,7 +12,8 @@
 私自身日本酒が大好きで、利酒師の資格を取得した程なのでお酒好きの皆さんと一緒に作り上げていくようなアプリにしたいと思っています。
 
 ## DEMO
-![toppageスクショ](https://user-images.githubusercontent.com/58945747/81663171-713d0700-9479-11ea-8e4e-88f1655cda66.png)
+![40c16fa947b11b3d9842fb78c8e79841](https://user-images.githubusercontent.com/58945747/85203467-11bffa00-b349-11ea-8727-72c13eaa038d.jpg)
+![詳細画面](https://user-images.githubusercontent.com/58945747/85203475-1e445280-b349-11ea-9366-36f923230eb9.png)
 
 ## 実装予定の内容
 - ユーザー管理機能
