@@ -14,6 +14,8 @@
 ## DEMO
 ![40c16fa947b11b3d9842fb78c8e79841](https://user-images.githubusercontent.com/58945747/85203467-11bffa00-b349-11ea-8727-72c13eaa038d.jpg)
 ![詳細画面](https://user-images.githubusercontent.com/58945747/85203475-1e445280-b349-11ea-9366-36f923230eb9.png)
+![検索結果](https://user-images.githubusercontent.com/58945747/85203633-0a4d2080-b34a-11ea-9e82-79227de6dfa5.png)
+
 
 ## 実装予定の内容
 - ユーザー管理機能
