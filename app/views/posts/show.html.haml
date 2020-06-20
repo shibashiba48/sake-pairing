@@ -38,7 +38,7 @@
             .detail-comment__nickname= comment.user.nickname
             .detail-comment__body
               = comment.body
-    = f.text_area :body, class: :"detail-comment__textbox"
+    = f.text_area :body, class: :"detail-comment__textbox", placeholder: '気軽にコメントしましょう！'
     .detail-comment__button
       = button_tag type: 'submit', class: 'detail-comment__submit' do
         = icon 'fa', 'comment'
