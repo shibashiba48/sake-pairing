@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  accepts_nested_attributes_for :favorites, allow_destroy: true
 
   validates :name, :text, presence: true
 
