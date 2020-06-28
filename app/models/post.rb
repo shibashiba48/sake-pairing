@@ -15,4 +15,15 @@ class Post < ApplicationRecord
     return Post.all unless search
     Post.joins(:tags).where('tags.text LIKE(?)', "%#{search}%")
   end
+
+  # postをいいねする
+  def like(user)
+    favorites.create(user_id: user.id)
+  end
+
+  # postのいいねを解除する
+  def dislike(user)
+    favorites.find_by(user_id: user.id).destroy
+  end
+
 end
