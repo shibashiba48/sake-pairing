@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     get "search"
   end
+  resources :favorites, only: [:create, :destroy]
 end
