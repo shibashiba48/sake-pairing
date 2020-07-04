@@ -19,6 +19,7 @@
           = tag.text
       .detail-box__description__text
         = @post.text
+        = render "favorites/favorite", post: @post
     .detail-box__action
       = link_to edit_post_path(@post), class: :"detail-box__action__link" do
         .detail-box__action__button 投稿の編集
