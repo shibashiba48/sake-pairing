@@ -27,6 +27,7 @@ class Post < ApplicationRecord
     favorites.find_by(user_id: user.id).destroy
   end
 
+  # 現在のユーザーがいいねしてたらtrueを返す
   def iine?(user)
     iine_users.include?(user)
   end
