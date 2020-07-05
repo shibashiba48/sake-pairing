@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   accepts_nested_attributes_for :favorites, allow_destroy: true
+  has_many :iine_users, through: :favorites, source: :user
 
   validates :name, :text, presence: true
 
@@ -17,13 +18,17 @@ class Post < ApplicationRecord
   end
 
   # postをいいねする
-  def like(user)
+  def iine(user)
     favorites.create(user_id: user.id)
   end
 
   # postのいいねを解除する
-  def dislike(user)
+  def uniine(user)
     favorites.find_by(user_id: user.id).destroy
+  end
+
+  def iine?(user)
+    iine_users.include?(user)
   end
 
 end
